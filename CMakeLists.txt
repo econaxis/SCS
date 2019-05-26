@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 2.6)
+project (CF)
+add_compile_definitions(DEBUG)
+add_compile_options(--std=c++14 -Wall -O2)
+add_executable(SCS main.cpp)
