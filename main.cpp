@@ -19,12 +19,11 @@ int main() {
             if(i==k) continue;
 
             //I contains suffix (to be cut) and K contains prefix (NO cut)
-            float alikeness=0.0, alikenessf=0.0;
+            /* float alikeness=0.0, alikenessf=0.0; */
             for(int start=0; start<dna[i].length(); start++) {
                 string _suffix = dna[i].substr(start, dna[i].length()-start);
                 alikeness = LCS::maxf(alikeness, noe::maxOverlap(dna[k], _suffix));
-                alikenessf= LCS::maxf(alikeness, LCS::lcs_compute(dna[k], _suffix));
-                printf("prefix: %s testing suffix:%s answer:%f\n", dna[k].c_str(), _suffix.c_str(), alikeness);
+                alikenessf= LCS::maxf(alikenessf, LCS::lcs_compute(dna[k], _suffix));
             }
             overlaps[i][k]=alikeness;
             overlapsf[i][k]=alikenessf;

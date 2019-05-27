@@ -10,15 +10,9 @@
 string
 -
 
-/Users/user/documents/GitHub/SCS/include/noerror.h
-string
--
-
-/Users/user/documents/GitHub/SCS/main.cpp
-bits/stdc++.h
--
-include/noerror.h
-/Users/user/documents/GitHub/SCS/include/noerror.h
+/Users/user/documents/GitHub/SCS/lcs_scorer.cpp
 include/LCS_Scorer.h
 /Users/user/documents/GitHub/SCS/include/LCS_Scorer.h
+bits/stdc++.h
+-
 
