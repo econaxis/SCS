@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named TGEN
+
+# Build rule for target.
+TGEN: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TGEN
+.PHONY : TGEN
+
+# fast build rule for target.
+TGEN/fast:
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/build
+.PHONY : TGEN/fast
+
+#=============================================================================
 # Target rules for targets named SCS
 
 # Build rule for target.
@@ -177,6 +190,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+testgen.o: testgen.cpp.o
+
+.PHONY : testgen.o
+
+# target to build an object file
+testgen.cpp.o:
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/testgen.cpp.o
+.PHONY : testgen.cpp.o
+
+testgen.i: testgen.cpp.i
+
+.PHONY : testgen.i
+
+# target to preprocess a source file
+testgen.cpp.i:
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/testgen.cpp.i
+.PHONY : testgen.cpp.i
+
+testgen.s: testgen.cpp.s
+
+.PHONY : testgen.s
+
+# target to generate assembly for a file
+testgen.cpp.s:
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/testgen.cpp.s
+.PHONY : testgen.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -185,6 +225,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... TGEN"
 	@echo "... SCS"
 	@echo "... lcs_scorer.o"
 	@echo "... lcs_scorer.i"
@@ -192,6 +233,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... testgen.o"
+	@echo "... testgen.i"
+	@echo "... testgen.s"
 .PHONY : help
 
 

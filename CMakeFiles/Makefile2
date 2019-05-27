@@ -65,6 +65,43 @@ CMAKE_SOURCE_DIR = /Users/user/documents/GitHub/SCS
 CMAKE_BINARY_DIR = /Users/user/documents/GitHub/SCS
 
 #=============================================================================
+# Target rules for target CMakeFiles/TGEN.dir
+
+# All Build rule for target.
+CMakeFiles/TGEN.dir/all:
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/depend
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/user/documents/GitHub/SCS/CMakeFiles --progress-num=4,5 "Built target TGEN"
+.PHONY : CMakeFiles/TGEN.dir/all
+
+# Include target in all.
+all: CMakeFiles/TGEN.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/TGEN.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/documents/GitHub/SCS/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TGEN.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/documents/GitHub/SCS/CMakeFiles 0
+.PHONY : CMakeFiles/TGEN.dir/rule
+
+# Convenience name for target.
+TGEN: CMakeFiles/TGEN.dir/rule
+
+.PHONY : TGEN
+
+# clean rule for target.
+CMakeFiles/TGEN.dir/clean:
+	$(MAKE) -f CMakeFiles/TGEN.dir/build.make CMakeFiles/TGEN.dir/clean
+.PHONY : CMakeFiles/TGEN.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/TGEN.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/SCS.dir
 
 # All Build rule for target.

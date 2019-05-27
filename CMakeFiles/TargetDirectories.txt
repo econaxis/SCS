@@ -1,3 +1,4 @@
 /Users/user/documents/GitHub/SCS/CMakeFiles/rebuild_cache.dir
 /Users/user/documents/GitHub/SCS/CMakeFiles/edit_cache.dir
+/Users/user/documents/GitHub/SCS/CMakeFiles/TGEN.dir
 /Users/user/documents/GitHub/SCS/CMakeFiles/SCS.dir

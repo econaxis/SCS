@@ -8,3 +8,5 @@ set (CPP  "main.cpp" "lcs_scorer.cpp")
 set (HEADERS include/LCS_Scorer.h)
 message(${CPP})
 add_executable(SCS ${CPP} ${HEADERS})
+
+add_executable(TGEN testgen.cpp)
