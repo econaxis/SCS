@@ -123,6 +123,33 @@ SCS/fast:
 	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/build
 .PHONY : SCS/fast
 
+lcs_scorer.o: lcs_scorer.cpp.o
+
+.PHONY : lcs_scorer.o
+
+# target to build an object file
+lcs_scorer.cpp.o:
+	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/lcs_scorer.cpp.o
+.PHONY : lcs_scorer.cpp.o
+
+lcs_scorer.i: lcs_scorer.cpp.i
+
+.PHONY : lcs_scorer.i
+
+# target to preprocess a source file
+lcs_scorer.cpp.i:
+	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/lcs_scorer.cpp.i
+.PHONY : lcs_scorer.cpp.i
+
+lcs_scorer.s: lcs_scorer.cpp.s
+
+.PHONY : lcs_scorer.s
+
+# target to generate assembly for a file
+lcs_scorer.cpp.s:
+	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/lcs_scorer.cpp.s
+.PHONY : lcs_scorer.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SCS"
+	@echo "... lcs_scorer.o"
+	@echo "... lcs_scorer.i"
+	@echo "... lcs_scorer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

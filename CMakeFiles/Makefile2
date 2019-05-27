@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/user/documents/GitHub/SCS
 CMakeFiles/SCS.dir/all:
 	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/depend
 	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/user/documents/GitHub/SCS/CMakeFiles --progress-num=1,2 "Built target SCS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/user/documents/GitHub/SCS/CMakeFiles --progress-num=1,2,3 "Built target SCS"
 .PHONY : CMakeFiles/SCS.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/SCS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SCS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/documents/GitHub/SCS/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/documents/GitHub/SCS/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SCS.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/documents/GitHub/SCS/CMakeFiles 0
 .PHONY : CMakeFiles/SCS.dir/rule

@@ -6,5 +6,5 @@ CXX_FLAGS =   --std=c++14 -Wall -O2
 
 CXX_DEFINES = -DDEBUG
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/Users/user/documents/GitHub/SCS/include 
 

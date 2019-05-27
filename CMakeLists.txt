@@ -1,5 +1,10 @@
 cmake_minimum_required (VERSION 2.6)
 project (CF)
+
 add_compile_definitions(DEBUG)
 add_compile_options(--std=c++14 -Wall -O2)
-add_executable(SCS main.cpp)
+include_directories(include)
+set (CPP  "main.cpp" "lcs_scorer.cpp")
+set (HEADERS include/LCS_Scorer.h)
+message(${CPP})
+add_executable(SCS ${CPP} ${HEADERS})
