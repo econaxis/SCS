@@ -1,11 +1,16 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+
+float maxf(float a, float b) {
+    if(a > b) return a;
+    else return b;
+}
 const int MINO=5;
 int c[501][501];
-int lcs_compute(string X, string Y) {
+float lcs_compute(string X, string Y) {
     for(int i=0; i<501; i++) for(int j=0; j<501; j++) c[i][j]=0;
-    int maxans=0;
+    float maxans=0.0;
     printf("x: %s, y:%s \n", X.c_str(), Y.c_str());
     int m=X.length(), n=Y.length();
     for(int i = 0; i < m; i++)
@@ -23,13 +28,12 @@ int lcs_compute(string X, string Y) {
             a0=max(a0, c[i][j-1]-3);
             a0=max(a0, c[i-1][j]-3);
             c[i][j]=a0;
-            maxans=max(maxans, a0);
+            if(i==m-1) maxans=maxf(maxans, a0/(sqrt(i+j)));
         }
     }
     for(int i=0; i<m; i++) {
         for(int j=0; j<n; j++) {
-            if(c[i][j]==-1) cout<<"$ ";
-            else  cout<<c[i][j]<<" ";
+            cout<<c[i][j]<<" ";
         }
         cout<<endl;
     }
@@ -46,10 +50,10 @@ int main() {
         cin>>a1;
     }
     a1="$"+a1;
-    set<pair<int,> answer;
+    set<pair<float, string>> answer;
     for(int i=0; i<a0.length(); i++) {
         printf("try %d\n", i);
-        answer.insert(lcs_compute("$"+a0.substr(i, a0.length()-i), a1));
+        answer.insert({lcs_compute("$"+a0.substr(i, a0.length()-i), a1), a0.substr(i, a0.length()-i)});
     }
-    printf("max: %d\n", *answer.rbegin());
+    printf("max: %f string: %s\n", (*answer.rbegin()).first , (*answer.rbegin()).second.c_str());
 }
