@@ -5,5 +5,9 @@ CMakeFiles/SCS.dir/lcs_scorer.cpp.o: include/LCS_Scorer.h
 CMakeFiles/SCS.dir/lcs_scorer.cpp.o: lcs_scorer.cpp
 
 CMakeFiles/SCS.dir/main.cpp.o: include/LCS_Scorer.h
+CMakeFiles/SCS.dir/main.cpp.o: include/noerror.h
 CMakeFiles/SCS.dir/main.cpp.o: main.cpp
+
+CMakeFiles/SCS.dir/noerror.cpp.o: include/noerror.h
+CMakeFiles/SCS.dir/noerror.cpp.o: noerror.cpp
 

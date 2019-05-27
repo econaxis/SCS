@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SCS.dir/main.cpp.o"
   "CMakeFiles/SCS.dir/lcs_scorer.cpp.o"
+  "CMakeFiles/SCS.dir/noerror.cpp.o"
   "SCS.pdb"
   "SCS"
 )

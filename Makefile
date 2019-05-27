@@ -190,6 +190,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+noerror.o: noerror.cpp.o
+
+.PHONY : noerror.o
+
+# target to build an object file
+noerror.cpp.o:
+	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/noerror.cpp.o
+.PHONY : noerror.cpp.o
+
+noerror.i: noerror.cpp.i
+
+.PHONY : noerror.i
+
+# target to preprocess a source file
+noerror.cpp.i:
+	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/noerror.cpp.i
+.PHONY : noerror.cpp.i
+
+noerror.s: noerror.cpp.s
+
+.PHONY : noerror.s
+
+# target to generate assembly for a file
+noerror.cpp.s:
+	$(MAKE) -f CMakeFiles/SCS.dir/build.make CMakeFiles/SCS.dir/noerror.cpp.s
+.PHONY : noerror.cpp.s
+
 testgen.o: testgen.cpp.o
 
 .PHONY : testgen.o
@@ -233,6 +260,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... noerror.o"
+	@echo "... noerror.i"
+	@echo "... noerror.s"
 	@echo "... testgen.o"
 	@echo "... testgen.i"
 	@echo "... testgen.s"
