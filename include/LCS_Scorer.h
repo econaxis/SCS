@@ -2,7 +2,7 @@
 #define LCS_Scorer
 #include <string>
 namespace LCS{
-float maxf(float a, float b);
-float lcs_compute(std::string X, std::string Y);
+double maxf(double a, double b);
+double lcs_compute(std::string X, std::string Y);
 }
 #endif
