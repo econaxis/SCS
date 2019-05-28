@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+double alikenessG[50][50][50], curIt=0;
 namespace LCS
 {
     double maxf(double a, double b) {
@@ -42,7 +43,7 @@ namespace LCS
                 a0=maxf(a0, c[i-1][j]-1);
                 c[i][j]=a0;
                 printf("%d ", c[i][j]);
-
+                alikenessG[i][j][curIt]=c[i][j];
 
                 double tempAns = (double)c[i][j] / (2 * max(1, YLEN-1));
                 CURMAXANSWER=maxf(CURMAXANSWER, tempAns);

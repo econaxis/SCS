@@ -6,7 +6,6 @@ add_compile_options(--std=c++14 -Wall -O2)
 include_directories(include)
 set (CPP  "main.cpp" "lcs_scorer.cpp" "noerror.cpp")
 set (HEADERS include/LCS_Scorer.h include/noerror.h)
-message(${CPP})
 add_executable(SCS ${CPP} ${HEADERS})
 
 add_executable(TGEN testgen.cpp)
