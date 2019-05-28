@@ -15,14 +15,21 @@ namespace LCS
     double lcs_compute(string X, string Y) {
         //Y is SUFFIX n is lengthk
         for(int i=0; i<501; i++) for(int j=0; j<501; j++) c[i][j]=0;
-        double maxans=0.0, a0;
+
+
+        double CURMAXANSWER=0.0, a0;
+
+
+        //As DP starts indexing at 1. Add lowest lexicograph character as placeholder for index 0
         X="$"+X;
         Y="$"+Y;
-        int m=X.length(), n=Y.length();
-        /* m = min ( 2*n, m ); */
-        for(int i = 0; i <=m; i++)
+
+
+        const int XLEN=X.length(), YLEN=Y.length();
+        /* XLEN = XLENin ( 2*n, XLEN ); */
+        for(int i = 0; i <=XLEN; i++)
         {
-            for(int j = 0; j <= n; j++)
+            for(int j = 0; j <= YLEN; j++)
             {
                 if(i == 0 || j == 0) {
                     c[i][j] = 0;
@@ -37,12 +44,12 @@ namespace LCS
                 printf("%d ", c[i][j]);
 
 
-                double tempAns = (double)c[i][j] / (2 * max(1, n-1));
-                maxans=maxf(maxans, tempAns);
+                double tempAns = (double)c[i][j] / (2 * max(1, YLEN-1));
+                CURMAXANSWER=maxf(CURMAXANSWER, tempAns);
             }
             cout<<endl;
         }
-        printf("x: %s, y:%s ans: %f\n", X.c_str(), Y.c_str(), maxans);
-        return maxans;
+        printf("x: %s, y:%s ans: %f\n", X.c_str(), Y.c_str(), CURMAXANSWER);
+        return CURMAXANSWER;
     }
 }
