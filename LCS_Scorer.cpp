@@ -11,7 +11,7 @@ namespace LCS
     }
 
     //DP Array
-    int c[501][501];
+    double c[501][501];
 
     double lcs_compute(string X, string Y) {
         //Y is SUFFIX n is lengthk
@@ -33,14 +33,14 @@ namespace LCS
             for(int j = 0; j <= YLEN; j++)
             {
                 if(i == 0 || j == 0) {
-                    c[i][j] = 0;
+                    c[i][j] = 1;
                     continue;
                 }
-                if(X[i] == Y[j]) a0=c[i-1][j-1]+2;
-                else  a0=c[i-1][j-1]-1;
+                if(X[i] == Y[j]) a0=c[i-1][j-1]*1.5;
+                else  a0=c[i-1][j-1]*0.8;
 
-                a0=maxf(a0, c[i][j-1]-1);
-                a0=maxf(a0, c[i-1][j]-1);
+                a0=maxf(a0, c[i][j-1]*0.8);
+                a0=maxf(a0, c[i-1][j]*0.8);
                 c[i][j]=a0;
                 printf("%d ", c[i][j]);
                 /* alikenessG[i][j][curIt]=c[i][j]; */
