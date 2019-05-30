@@ -4,7 +4,7 @@ project (CF)
 add_compile_definitions(DEBUG)
 add_compile_options(--std=c++14 -Wall -O2)
 include_directories(include)
-set (CPP  "main.cpp" "lcs_scorer.cpp" "noerror.cpp")
+set (CPP  main.cpp LCS_Scorer.cpp noerror.cpp)
 set (HEADERS include/LCS_Scorer.h include/noerror.h)
 add_executable(SCS ${CPP} ${HEADERS})
 
