@@ -1,7 +1,7 @@
 #ifndef CONFIGS
 #define CONFIGS
 
-const double INCR = 2;
-const double DECR = 1;
-const double MULT = 1;
+double INCR = 2;
+double DECR = 1;
+double MULT = 1;
 #endif
