@@ -1,0 +1,4 @@
+applications:
+- name: SCS
+  random-route: true
+  memory: 28M
