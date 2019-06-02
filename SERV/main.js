@@ -7,8 +7,9 @@ $(document).ready(function(){
     $( '#load-file' ).click( function () {
         var formD = new FormData();
         formD.append('file', $("#name").get(0).files[0])
+        var _url = $('#url').val();
         $.ajax({
-            url:"https://average-donkey-12.localtunnel.me",
+            url:_url,
             data: formD,
             processData: false,
             contentType: false,

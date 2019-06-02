@@ -6,7 +6,6 @@ const server = http.createServer((request, response) => {
     var _PATH = "/Users/user/documents/github/SCS/", output;
     console.log("Connection: " + request.url);
     response.setHeader("Access-Control-Allow-Origin", "*");
-    response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     response.writeHead(200, {'content-type': 'text/plain'});
     if(request.method == 'POST') {
         var form = new formidable.IncomingForm();
