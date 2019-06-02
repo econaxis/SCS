@@ -18,7 +18,6 @@ namespace LCS
     double c[501][501];
 
     double lcs_compute(string X, string Y) {
-        printf("computing\n");
         //Y is SUFFIX n is lengthk
         for(int i=0; i<501; i++) for(int j=0; j<501; j++) c[i][j]=0;
 
@@ -50,11 +49,11 @@ namespace LCS
                 /* alikenessG[i][j][curIt]=c[i][j]; */
                 /* double tempAns = (double ) a0 * a0 * MULT / YLEN; */
                 double tempAns = 0;
-                if(j == YLEN) tempAns = (double) a0 * a0 * MULT / (YLEN * i);
+                if(j == YLEN) tempAns = (double) a0 * MULT / (log10(YLEN));
                 CURMAXANSWER=maxf(CURMAXANSWER, tempAns);
             }
         }
-        printf("x: %s, y:%s ans: %f\n", X.c_str(), Y.c_str(), CURMAXANSWER);
+        /* printf("x: %s, y:%s ans: %f\n", X.c_str(), Y.c_str(), CURMAXANSWER); */
         return CURMAXANSWER;
     }
     vector<vector<double>> init2 (string suf, string pref) {
@@ -69,13 +68,14 @@ namespace LCS
                 auto temp=suf;
                 suf=pref; pref=temp;
             }
+            printf("suffix: %s prefix: %s\n", suf.c_str(), pref.c_str());
             for(int start=0; start<suf.length(); start++) {
                 string _suffix = suf.substr(start, suf.length()-start);
-                printf("suffix: %s\n", _suffix.c_str());
                 double lcs_ans = LCS::lcs_compute (pref, _suffix);
                 alikenessG [i][start] = lcs_ans;
-                /* alikeness = LCS::maxf(alikeness, noe::maxOverlap(pref, _suffix)); */
+                printf("%f ", lcs_ans);
             }
+            printf("\n");
         }
         return alikenessG;
     }
