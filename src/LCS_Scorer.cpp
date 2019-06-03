@@ -49,7 +49,7 @@ namespace LCS
                 /* alikenessG[i][j][curIt]=c[i][j]; */
                 /* double tempAns = (double ) a0 * a0 * MULT / YLEN; */
                 double tempAns = 0;
-                if(j == YLEN) tempAns = (double) a0 * MULT / (log10(YLEN));
+                if(j == YLEN) tempAns = (double) a0 * MULT / ((YLEN));
                 CURMAXANSWER=maxf(CURMAXANSWER, tempAns);
             }
         }
