@@ -1,7 +1,9 @@
 /* #include "include/LCS_Scorer.h" */
 #include <LCS_Scorer.h>
+#include <math.h>
 #include "../data/configs.h"
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 double curIt=0;
@@ -15,11 +17,12 @@ namespace LCS
     }
 
     //DP Array
-    double c[501][501];
+    const int ARR_SIZE = 5001;
+    double c[ARR_SIZE][ARR_SIZE];
 
     double lcs_compute(string X, string Y) {
         //Y is SUFFIX n is lengthk
-        for(int i=0; i<501; i++) for(int j=0; j<501; j++) c[i][j]=0;
+        for(int i=0; i<ARR_SIZE; i++) for(int j=0; j<ARR_SIZE; j++) c[i][j]=0;
 
 
         double CURMAXANSWER=0.0, a0;
@@ -49,14 +52,14 @@ namespace LCS
                 /* alikenessG[i][j][curIt]=c[i][j]; */
                 /* double tempAns = (double ) a0 * a0 * MULT / YLEN; */
                 double tempAns = 0;
-                if(j == YLEN) tempAns = (double) a0 * MULT / ((YLEN));
+                if(j == YLEN) tempAns = (double) a0 * MULT / log10 (YLEN);
                 CURMAXANSWER=maxf(CURMAXANSWER, tempAns);
             }
         }
         /* printf("x: %s, y:%s ans: %f\n", X.c_str(), Y.c_str(), CURMAXANSWER); */
         return CURMAXANSWER;
     }
-    vector<vector<double>> init2 (string suf, string pref) {
+    vector<vector<double>> init2 (string suf, string pref, pair<double, int> &bestAns) {
         //CLEAR
         alikenessG.clear();
         alikenessG.resize(2);
@@ -68,14 +71,14 @@ namespace LCS
                 auto temp=suf;
                 suf=pref; pref=temp;
             }
-            printf("suffix: %s prefix: %s\n", suf.c_str(), pref.c_str());
             for(int start=0; start<suf.length(); start++) {
                 string _suffix = suf.substr(start, suf.length()-start);
                 double lcs_ans = LCS::lcs_compute (pref, _suffix);
                 alikenessG [i][start] = lcs_ans;
-                printf("%f ", lcs_ans);
+                if(bestAns.first < lcs_ans) {
+                    bestAns = {lcs_ans, start};
+                }
             }
-            printf("\n");
         }
         return alikenessG;
     }
